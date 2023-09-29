@@ -8,7 +8,7 @@ import (
 	_ "golang.org/x/mobile/bind"
 )
 
-type TLSServer struct {
+type Instance struct {
 	server    *http.Server
 	folder    string
 	certPath  string
@@ -18,8 +18,8 @@ type TLSServer struct {
 	lock      sync.RWMutex
 }
 
-func NewTLSServer(folderPath string, certPath string, keyPath string, port string) *TLSServer {
-	return &TLSServer{
+func NewInstance(folderPath string, certPath string, keyPath string, port string) *Instance {
+	return &Instance{
 		folder:   folderPath,
 		certPath: certPath,
 		keyPath:  keyPath,
@@ -27,7 +27,7 @@ func NewTLSServer(folderPath string, certPath string, keyPath string, port strin
 	}
 }
 
-func (s *TLSServer) Start() {
+func (s *Instance) Start() {
 	s.lock.Lock()
 	defer s.lock.Unlock()
 
@@ -52,7 +52,7 @@ func (s *TLSServer) Start() {
 	s.isRunning = true
 }
 
-func (s *TLSServer) Stop() {
+func (s *Instance) Stop() {
 	s.lock.Lock()
 	defer s.lock.Unlock()
 
