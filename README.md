@@ -14,7 +14,7 @@ guard
     port: 3000
   )
 else {
-    // Handle Error
+  // Handle Error
 }
 server.start()
 ```
