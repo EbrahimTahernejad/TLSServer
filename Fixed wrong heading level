@@ -19,7 +19,7 @@ else {
 server.start()
 ```
 
-# Stop the Server
+## Stop the Server
 ```swift
 server.stop()
 ```
