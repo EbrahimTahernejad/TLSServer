@@ -3,6 +3,7 @@ package TLSServer
 import (
 	"fmt"
 	"net/http"
+	"strconv"
 	"sync"
 
 	_ "golang.org/x/mobile/bind"
@@ -14,11 +15,11 @@ type Instance struct {
 	certPath  string
 	keyPath   string
 	isRunning bool
-	port      string
+	port      int
 	lock      sync.RWMutex
 }
 
-func NewInstance(folderPath string, certPath string, keyPath string, port string) *Instance {
+func NewInstance(folderPath string, certPath string, keyPath string, port int) *Instance {
 	return &Instance{
 		folder:   folderPath,
 		certPath: certPath,
@@ -38,7 +39,7 @@ func (s *Instance) Start() {
 	}
 
 	s.server = &http.Server{
-		Addr:    ":" + s.port,
+		Addr:    ":" + strconv.Itoa(s.port),
 		Handler: http.FileServer(http.Dir(s.folder)),
 	}
 
