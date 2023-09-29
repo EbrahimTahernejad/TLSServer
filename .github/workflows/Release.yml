@@ -34,7 +34,8 @@ jobs:
         run: |
           cd TLSServer
           sh build.sh
-          zip -ry ./build/TLSServer.xcframework.zip ./build/TLSServer.xcframework
+          cd build
+          zip -ry ./TLSServer.xcframework.zip ./TLSServer.xcframework
           
       - name: Detect checksum
         run: |
