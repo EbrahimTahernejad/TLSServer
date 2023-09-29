@@ -11,8 +11,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "TLSServer",
-      url: "https://github.com/EbrahimTahernejad/TLSServer/releases/download/0.1.2/TLSServer.xcframework.zip",
-      checksum: "a9f8f8c5fcd33d5f63b99903753811e122ca865e6a5f7051fc181144b7a4702b"
+      url: "https://github.com/EbrahimTahernejad/TLSServer/releases/download/0.1.3/TLSServer.xcframework.zip",
+      checksum: "3b9a48628a2727b8e753f347477d95205304a14eb7e7768d7a68e2c5d6bc05cc"
     )
   ]
 )
