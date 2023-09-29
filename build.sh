@@ -1,2 +1,2 @@
 mkdir -p build
-gomobile bind -target=ios,iossimulator,macos -o build/TLSServer.xcframework .
+gomobile bind -iosversion=12.0 -target=ios,iossimulator,macos -o build/TLSServer.xcframework .
