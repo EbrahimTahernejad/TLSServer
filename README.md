@@ -11,7 +11,7 @@ guard
     "/folder/to/server",
     certPath: "/path/to/cert.pem",
     keyPath: "/path/to/key.pem",
-    port: "3000"
+    port: 3000
   )
 else {
     // Handle Error
